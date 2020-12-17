@@ -1,0 +1,33 @@
+// В этом файле должны быть стили для БЭМ-блока nav, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.nav-steps {
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	top: 50%;
+	transform: translateY(-50%);
+	right: calc((100vw - 1744px) / 2);
+	z-index: 99;
+	&__item {
+		color: var(--color-typography-inverse);
+		text-decoration: none;
+		font-size: 18px;
+		font-weight: 500;
+		line-height: 1.23;
+		text-align: right;
+		letter-spacing: -0.125px;
+		padding: 19px 35px 19px 8px;
+		box-shadow: inset -3px 0 0 0 var(--color-white);
+		transition: opacity .25s ease;
+		opacity: .5;
+		&:hover {
+			opacity: 1;
+		}
+		&_active {
+			opacity: 1;
+			pointer-events: none;
+		}
+	}
+}

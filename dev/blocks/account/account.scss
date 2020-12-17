@@ -1,0 +1,23 @@
+// В этом файле должны быть стили для БЭМ-блока account, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.account {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	transition: opacity .25s ease;
+	&:hover {
+		opacity: .5;
+	}
+	&__icon {
+		height: 24px;
+		width: 24px;
+		fill: var(--color-white);
+	}
+	&__username {
+		margin-left: 8px;
+		text-decoration: none;
+		color: var(--color-white);
+	}
+}

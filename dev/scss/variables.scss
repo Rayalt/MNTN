@@ -1,0 +1,22 @@
+:root {
+	--font-family-base:				var(--font-family-sans);
+	--font-family-sans:				'Poppins', sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	--font-family-serif:			'Cardo', serif, 'Times New Roman', Times;
+
+	--color-typography:				#000000;
+    --color-typography-inverse:		#ffffff;
+    
+	--color-white:					#ffffff;
+	--color-semi-white:				rgba(255, 255, 255, .5);
+    --accent-color:					#FBD784;
+
+	--body-bg:						#0B1D26;
+	--body-color:					#000000;
+
+	--font-size-base:				  1rem;
+	--font-size-root:				  null;
+
+	--font-weight-base:				  var(--font-weight-normal);
+	--line-height-base:				  1;
+
+}

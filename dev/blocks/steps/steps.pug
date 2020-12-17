@@ -1,0 +1,15 @@
+//- Все примеси в этом файле должны начинаться c имени блока (steps)
+
+mixin steps-item(vars)
+	each item in vars.item ? vars.item : []
+		.steps__item
+			.steps__col
+				.steps__content
+					.steps__subtitle!= item.subtitle
+					h2.steps__title!= item.title
+					p.steps__descr!= item.descr
+					a.steps__link(href='#') read more
+						svg.steps__arrow
+							use(xlink:href='img/svgSprite.svg#icon__arrow')
+			each item in vars.item ? vars.item : []
+				img.steps__img(src='/img/img__steps_' + item.num + '.jpg')

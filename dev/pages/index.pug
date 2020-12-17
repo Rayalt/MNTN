@@ -1,0 +1,93 @@
+extends ../pug/layout_default.pug
+
+block content
+	header.header
+		.header__inner
+			.grid
+				.grid__row
+					.grid__col.grid__col_xl-12
+						.header__row
+							svg.header__logo.logo
+								use(xlink:href='/img/svgSprite.svg#icon__logo')
+							nav.header__nav
+								a.header__item(href='#') Equipment
+								a.header__item(href='#') About us
+								a.header__item(href='#') Blog
+							.header__account
+								a.account(href='#')
+									svg.account__icon
+										use(xlink:href='/img/svgSprite.svg#icon__account')
+									.account__username Account
+	.socials
+		.socials__col
+			.socials__title Follow us
+			a.socials__link(href='htts://instagram.com')
+				svg.socials__icon
+					use(xlink:href='img/svgSprite.svg#icon__inst')
+			a.socials__link(href='htts://twitter.com')
+				svg.socials__icon
+					use(xlink:href='img/svgSprite.svg#icon__tw')
+	nav.nav-steps
+		a.nav-steps__item.nav-steps__item_active(href='#start') Start
+		a.nav-steps__item(href='#01') 01
+		a.nav-steps__item(href='#02') 02
+		a.nav-steps__item(href='#03') 03
+	section.hero
+		.hero__inner
+			.hero__content
+				.hero__subtitle A Hiking guide
+				h1.hero__heading Be prepared for the Mountains and beyond!
+				a.hero__link(href='#steps') scroll down
+					svg.hero__arrow
+						use(xlink:href='img/svgSprite.svg#icon__arrow')
+		.hero__bg
+			.hero__layer.hero__layer_darker(data-type='parallax', data-depth=2.5)
+			.hero__layer.hero__layer_front(data-type='parallax', data-depth=3)
+			.hero__layer.hero__layer_middle(data-type='parallax', data-depth=1.25)
+			.hero__layer.hero__layer_back
+	section.steps(id='steps')
+		.steps__inner
+			.grid
+				.grid__row
+					.grid__col.grid__col_xl-10.col-offset__xl-1
+						+steps-item(binary.step1)
+	section.steps.steps_even
+		.steps__inner
+			.grid
+				.grid__row
+					.grid__col.grid__col_xl-10.col-offset__xl-1
+						+steps-item(binary.step2)
+	section.steps
+		.steps__inner
+			.grid
+				.grid__row
+					.grid__col.grid__col_xl-10.col-offset__xl-1
+						+steps-item(binary.step3)
+	footer.footer
+		.footer__inner
+			.grid
+				.grid__row
+					.grid__col.grid__col_xl-3.col-offset__xl-1
+						.footer__info
+							svg.footer__logo.logo
+								use(xlink:href='/img/svgSprite.svg#icon__logo')
+							.footer__text Get out there & discover your next <br>slope, mountain & destination!
+							.footer__copy Copyright 2019 MNTN, Inc. Terms & Privacy
+					.grid__col.grid__col_xl-4.col-offset__xl-3
+						.footer-links
+							+footer-links('More on the Blog',
+								[
+									{link: 'About MNTN', href: '#'},
+									{link: 'Contributors & Writers', href: '#'},
+									{link: 'Write For Us', href: '#'},
+									{link: 'Contact us', href: '#'},
+									{link: 'Privacy Policy', href: '#'}
+								]
+							)
+							+footer-links('More on the Blog',
+								[
+									{link: 'The Team', href: '#'},
+									{link: 'Jobs', href: '#'},
+									{link: 'Press', href: '#'}
+								]
+							)

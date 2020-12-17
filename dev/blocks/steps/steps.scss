@@ -1,0 +1,78 @@
+// В этом файле должны быть стили для БЭМ-блока steps, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.steps {
+	counter-increment: step;
+	height: 100vh;
+	min-height: 920px;
+	&__item {
+		align-items: center;
+		display: flex;
+		gap: 114px;
+	}
+	&_even &__item {
+		flex-direction: row-reverse;
+	}
+	&__inner {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 152px 0 48px;
+	}
+	&__img {
+		display: block;
+		height: auto;
+		max-width: 100%;
+		min-width: 566px;
+	}
+	&__col {
+		align-items: center;
+		display: flex;
+		height: 100%;
+		padding: 0 0 0 150px;
+		width: 782px;
+	}
+	&__content {
+		display: grid;
+		grid-gap: 27px;
+		&::before {
+			@include digit;
+			content: '0'counter(step);
+			position: absolute;
+			transform: translate(-150px, -100px);
+		}
+	}
+	&__title {
+		@include title;
+	}
+	&__subtitle {
+		@include subtitle;
+	}
+	&__descr {
+		@include descr;
+	}
+	&__link {
+		align-items: center;
+		@include readmore;
+		display: flex;
+		max-width: 135px;
+		color: var(--accent-color);
+		opacity: 1;
+		transition: opacity .125s ease;
+		&:hover {
+			opacity: .8;
+			.steps__arrow {
+				transform: translateX(8px);
+			}
+		}
+	}
+	&__arrow {
+		fill: var(--accent-color);
+		height: 16px;
+		width: 24px;
+		display: block;
+		margin-left: 17px;
+		transition: transform .125s ease;
+	}
+}

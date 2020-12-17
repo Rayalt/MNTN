@@ -1,0 +1,107 @@
+// В этом файле должны быть стили для БЭМ-блока hero, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.hero {
+	position: relative;
+	height: 100vh;
+	min-height: 960px;
+	&__inner {
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	&__content {
+		max-width: 950px;
+		margin: 0 auto;
+	}
+	&__bg {
+		height: 100%;
+		overflow: hidden;
+		position: absolute;
+		left: 0;
+		width: 100%;
+		top: 0;
+		z-index: -1;
+	}
+	&__layer {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		&_darker {
+			background: linear-gradient(to top, var(--body-bg) 75%, rgba(#0B1D26, 0) 100%);
+			background-size: cover;
+			height: 300%;
+			top: 70%;
+			z-index: 0;
+		}
+		&_front {
+			background: url('/img/bg__hero_front.png') no-repeat center top;
+			background-size: cover;
+			top: 70%;
+			z-index: -1;
+		}
+		&_middle {
+			background: url('/img/bg__hero_middle.png') no-repeat center top;
+			background-size: cover;
+			z-index: -2;
+			top: 25%;
+		}
+		&_back {
+			background: url('/img/bg__hero_back.jpg') no-repeat center top;
+			background-size: cover;
+			z-index: -3;
+		}
+	}
+	& + .test {
+		height: 200vh;
+		margin: 0 auto;
+		width: 90%;
+	}
+	&__arrow {
+		height: 16px;
+		width: 24px;
+		display: block;
+		fill: var(--color-white);
+		transform: rotate(90deg);
+		position: relative;
+		margin: 0 0 0 16px;
+	}
+	&__link {
+		color: var(--color-typography-inverse);
+		font-size: 18px;
+		text-decoration: none;
+		font-weight: 600;
+		margin: 32px 0 0 0;
+		display: flex;
+		align-items: center;
+		max-width: 145px;
+		transition: all .5s ease;
+		&:hover {
+			opacity: .7;
+			.hero__arrow {
+				animation: arrow 1.5s infinite ease;
+			}
+		}
+	}
+	&__subtitle {
+		@include subtitle;
+	}
+	&__heading {
+		@include heading;
+		margin-top: 32px;
+	}
+}
+
+@keyframes arrow {
+	0% {
+	  top: 0px;
+	  }
+	50% {
+	  top: 8px;
+	  }
+	100% {
+	  top: 0px;
+	  } 
+  }

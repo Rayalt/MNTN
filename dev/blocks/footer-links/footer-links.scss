@@ -1,0 +1,40 @@
+// В этом файле должны быть стили для БЭМ-блока footer-links, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.footer-links {
+	display: flex;
+	justify-content: space-between;
+	&__content {}
+	&__list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	&__link {
+		text-decoration: none;
+		color: var(--color-white);
+		font-weight: 400;
+		display: inline-block;
+		transition: opacity .25s ease;
+		letter-spacing: -0.75px;
+		line-height: 1.79;
+		&:hover {
+			opacity: .5;
+		}
+	}
+	&__heading {
+		color: var(--accent-color);
+		font-size: 24px;
+		line-height: 1.34;
+		font-weight: 500;
+	}
+	&__item {
+		& + & {
+			margin: 16px 0 0 0;
+		}
+		&:first-of-type {
+			margin: 24px 0 0 0;
+		}
+	}
+}
