@@ -3,21 +3,21 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .account {
-	display: flex;
 	align-items: center;
+	display: flex;
 	text-decoration: none;
 	transition: opacity .25s ease;
 	&:hover {
 		opacity: .5;
 	}
 	&__icon {
+		fill: var(--color-white);
 		height: 24px;
 		width: 24px;
-		fill: var(--color-white);
 	}
 	&__username {
+		color: var(--color-white);
 		margin-left: 8px;
 		text-decoration: none;
-		color: var(--color-white);
 	}
 }

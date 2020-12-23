@@ -3,30 +3,54 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .header {
+	display: block;
 	position: fixed;
-	z-index: 99;
 	width: 100%;
+	z-index: 99;
+	@media (min-width: $screen-xl) {
+		display: block;
+		position: fixed;
+		width: 100%;
+		z-index: 99;
+	}
 	&__inner {
 		padding: 64px 0;
+		@media (max-width: $screen-sm) {
+			padding: 16px 0;
+		}
 	}
 	&__row {
-		display: flex;
 		align-items: center;
+		display: flex;
 		justify-content: space-between;
 	}
 	&__logo,
 	&__account {
 		width: 108px;
 	}
+	&__account {
+		display: none;
+		@media (min-width: $screen-md) {
+			display: block;
+		}
+	}
+	&__nav {
+		display: none;
+		@media (min-width: $screen-md) {
+			display: block;
+		}
+	}
 	&__item {
+		text-decoration: none;
 		transition: color .25s ease;
+		color: var(--color-typography-inverse);
 		&:hover {
 			color: var(--accent-color);
 		}
-		& + & {
-			margin-left: 40px;
+		@media (min-width: $screen-md) {
+			& + & {
+				margin-left: 40px;
+			}
 		}
-		color: var(--color-typography-inverse);
-		text-decoration: none;
 	}
 }

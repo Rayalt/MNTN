@@ -3,31 +3,53 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .nav-steps {
-	position: fixed;
-	display: flex;
-	flex-direction: column;
-	top: 50%;
-	transform: translateY(-50%);
-	right: calc((100vw - 1744px) / 2);
-	z-index: 99;
+	//right: calc((100vw - 288px) / 2);
+	display: none;
+	@media (min-width: $screen-md) {
+		//transform: translate(-6.25%, (-50%));
+		display: flex;
+		flex-direction: column;
+		position: fixed;
+		right: calc((100vw - 904px) / 2);
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 99;
+	}
+	@media (min-width: $screen-lg) {
+		right: calc((100vw - 1184px) / 2);
+		//transform: translate(-14.286%, (-50%));
+	}
+	@media (min-width: $screen-xl) {
+		right: calc((100vw - 1744px) / 2);
+		//transform: translate(-16.67%, (-50%));
+	}
 	&__item {
-		color: var(--color-typography-inverse);
-		text-decoration: none;
-		font-size: 18px;
-		font-weight: 500;
-		line-height: 1.23;
-		text-align: right;
-		letter-spacing: -0.125px;
-		padding: 19px 35px 19px 8px;
-		box-shadow: inset -3px 0 0 0 var(--color-white);
-		transition: opacity .25s ease;
-		opacity: .5;
+		@media (min-width: $screen-md) {
+			box-shadow: inset -3px 0 0 0 var(--color-white);
+			color: var(--color-white);
+			font-size: 16px;
+			font-weight: 500;
+			letter-spacing: -0.125px;
+			line-height: 1.23;
+			opacity: .5;
+			padding: 16px 16px 16px 10px;
+			text-align: right;
+			text-decoration: none;
+			transition: opacity .25s ease;
+		}
+		@media (min-width: $screen-lg) {
+			font-size: 18px;
+			padding: 16px 28px 16px 8px;
+		}
+		@media (min-width: $screen-xl) {
+			font-size: 21px;
+			padding: 19px 35px 19px 8px;
+		}
 		&:hover {
 			opacity: 1;
 		}
 		&_active {
-			opacity: 1;
-			pointer-events: none;
+			background: var(--color-semi-white);
 		}
 	}
 }

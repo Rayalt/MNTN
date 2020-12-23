@@ -3,50 +3,70 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .hero {
-	position: relative;
 	height: 100vh;
-	min-height: 960px;
+	position: relative;
 	&__inner {
-		height: 100%;
-		display: flex;
-		justify-content: center;
 		align-items: center;
+		display: flex;
+		height: 100%;
+		justify-content: center;
 	}
 	&__content {
-		max-width: 950px;
 		margin: 0 auto;
+		width: calc(100% - 32px);
+		@media (min-width: $screen-sm) {
+			width: calc(100% - 88px);
+		}
+		@media (min-width: $screen-md) {
+			width: calc(100% - 460px);
+		}
+		@media (min-width: $screen-lg) {
+			width: calc(100% - 772px);
+		}
+		@media (min-width: $screen-lg) {
+			max-width: 950px;
+		}
 	}
 	&__bg {
 		height: 100%;
+		left: 0;
 		overflow: hidden;
 		position: absolute;
-		left: 0;
-		width: 100%;
 		top: 0;
+		width: 100%;
 		z-index: -1;
 	}
 	&__layer {
 		height: 100%;
-		width: 100%;
 		position: absolute;
+		width: 100vw;
 		&_darker {
-			background: linear-gradient(to top, var(--body-bg) 75%, rgba(#0B1D26, 0) 100%);
 			background-size: cover;
+			background: linear-gradient(to top, var(--body-bg) 75%, rgba(#0B1D26, 0) 100%);
 			height: 300%;
-			top: 70%;
+			top: 50%;
 			z-index: 0;
+			@media (min-width: $screen-xl) {
+				top: 70%;
+			}
 		}
 		&_front {
 			background: url('/img/bg__hero_front.png') no-repeat center top;
 			background-size: cover;
-			top: 70%;
+			top: 50%;
 			z-index: -1;
+			@media (min-width: $screen-xl) {
+				top: 70%;
+			}
 		}
 		&_middle {
 			background: url('/img/bg__hero_middle.png') no-repeat center top;
 			background-size: cover;
+			top: 40%;
 			z-index: -2;
-			top: 25%;
+			@media (min-width: $screen-xl) {
+				top: 25%;
+			}
 		}
 		&_back {
 			background: url('/img/bg__hero_back.jpg') no-repeat center top;
@@ -54,30 +74,44 @@
 			z-index: -3;
 		}
 	}
-	& + .test {
-		height: 200vh;
-		margin: 0 auto;
-		width: 90%;
-	}
 	&__arrow {
-		height: 16px;
-		width: 24px;
 		display: block;
 		fill: var(--color-white);
-		transform: rotate(90deg);
+		height: 10px;
+		margin: 0 0 0 8px;
 		position: relative;
-		margin: 0 0 0 16px;
+		transform: rotate(90deg);
+		width: 15px;
+		@media (min-width: 425px) {
+			height: 12px;
+			margin: 0 0 0 16px;
+			width: 18px;
+		}
+		@media (min-width: $screen-lg) {
+			height: 16px;
+			width: 24px;
+		}
 	}
 	&__link {
-		color: var(--color-typography-inverse);
-		font-size: 18px;
-		text-decoration: none;
-		font-weight: 600;
-		margin: 32px 0 0 0;
-		display: flex;
 		align-items: center;
+		color: var(--color-typography-inverse);
+		display: flex;
+		font-size: 14px;
+		font-weight: 400;
+		margin: 32px 0 0 0;
 		max-width: 145px;
+		text-decoration: none;
 		transition: all .5s ease;
+		@media (min-width: 425px) {
+			font-size: 16px;
+			font-weight: 500;
+		}
+		@media (min-width: $screen-lg) {
+			font-size: 18px;
+		}
+		@media (min-width: $screen-xl) {
+			font-weight: 600;
+		}
 		&:hover {
 			opacity: .7;
 			.hero__arrow {
@@ -91,17 +125,18 @@
 	&__heading {
 		@include heading;
 		margin-top: 32px;
+		text-transform: capitalize;
 	}
 }
 
 @keyframes arrow {
 	0% {
-	  top: 0px;
-	  }
+		top: 0px;
+	}
 	50% {
-	  top: 8px;
-	  }
+		top: 8px;
+	}
 	100% {
-	  top: 0px;
-	  } 
-  }
+		top: 0px;
+	} 
+}

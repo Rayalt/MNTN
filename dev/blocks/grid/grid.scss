@@ -384,4 +384,78 @@
     }
 }
 
+.col-order {
+    &__xs-1 {
+        @include col-order(xs, 1);
+    }
+    &__xs-2 {
+        @include col-order(xs, 2);
+    }
+    &__xs-3 {
+        @include col-order(xs, 3);
+    }
+    &__xs-4 {
+        @include col-order(xs, 4);
+    }
+    &__xs-5 {
+        @include col-order(xs, 5);
+    }
+    &__xs-6 {
+        @include col-order(xs, 6);
+    }
+    &__xs-7 {
+        @include col-order(xs, 7);
+    }
+    &__xs-8 {
+        @include col-order(xs, 8);
+    }
+    &__xs-9 {
+        @include col-order(xs, 9);
+    }
+    &__xs-10 {
+        @include col-order(xs, 10);
+    }
+    &__xs-11 {
+        @include col-order(xs, 11);
+    }
+    &__xs-12 {
+        @include col-order(xs, 12);
+    }
 
+    &__sm-1 {
+        @include col-order(sm, 1);
+    }
+    &__sm-2 {
+        @include col-order(sm, 2);
+    }
+    &__sm-3 {
+        @include col-order(sm, 3);
+    }
+    &__sm-4 {
+        @include col-order(sm, 4);
+    }
+    &__sm-5 {
+        @include col-order(sm, 5);
+    }
+    &__sm-6 {
+        @include col-order(sm, 6);
+    }
+    &__sm-7 {
+        @include col-order(sm, 7);
+    }
+    &__sm-8 {
+        @include col-order(sm, 8);
+    }
+    &__sm-9 {
+        @include col-order(sm, 9);
+    }
+    &__sm-10 {
+        @include col-order(sm, 10);
+    }
+    &__sm-11 {
+        @include col-order(sm, 11);
+    }
+    &__sm-12 {
+        @include col-order(sm, 12);
+    }
+}

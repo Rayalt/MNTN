@@ -3,7 +3,11 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .logo {
-	height: 24px;
-	width: 108px;
 	fill: var(--color-white);
+	height: 16px;
+	width: 72px;
+	@media (min-width: $screen-xl) {
+		height: 24px;
+		width: 108px;
+	}
 }

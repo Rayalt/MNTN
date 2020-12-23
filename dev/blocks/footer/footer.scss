@@ -4,10 +4,21 @@
 
 .footer {
 	&__inner {
-		padding: 120px 0;
+		padding: 176px 0 80px 0;
+		@media (min-width: $screen-md) {
+			padding: 112px 0;
+		}
+		@media (min-width: $screen-xl) {
+			padding: 120px 0;
+		}
 	}
 	&__logo {
-		flex: 0 0 auto;
+		display: none;
+		@media (min-width: $screen-sm) {
+			display: block;
+			flex: 0 0 auto;
+			margin: 4px 0;
+		}
 	}
 	&__info {
 		display: flex;
@@ -17,18 +28,30 @@
 
 	}
 	&__text {
-		margin: 24px 0 0 0;
-		font-weight: 500;
-		line-height: 32px;
-		letter-spacing: -0.5px;
 		flex: 1 1 auto;
+		font-size: 12px;
+		font-weight: 500;
+		letter-spacing: -0.5px;
+		line-height: 24px;
+		margin: 64px 0 0 0;
+		@media (min-width: $screen-xl) {
+			font-size: 14px;
+			line-height: 32px;
+			margin: 24px 0 0 0;
+		}
 	}
 	&__copy {
-		//margin: 132px 0 0 0;
-		font-weight: 400;
-		opacity: .5;
-		line-height: 32px;
-		letter-spacing: -0.5px;
 		flex: 0 0 auto;
+		font-size: 12px;
+		font-weight: 400;
+		letter-spacing: -0.5px;
+		line-height: 24px;
+		margin: 32px 0 0 0;
+		opacity: .5;
+		@media (min-width: $screen-xl) {
+			font-size: 14px;
+			line-height: 32px;
+			margin: 16px 0 0 0;
+		}
 	}
 }

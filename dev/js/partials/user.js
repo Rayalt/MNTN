@@ -21,11 +21,34 @@ window.onload = function() {
     });
 
 	let navItems = document.querySelectorAll('.nav-steps__item');
+	let stepSections = document.querySelectorAll('.steps');
+
+	let lastId;
+	let cur = [];
+	let fromTop = 1;
+
 	navItems.forEach(function(item) {
     	item.addEventListener('click', function (evt) {
     		navItems.forEach(function(item) {
         		evt.target !== item ? item.classList.remove('nav-steps__item_active') : item.classList.add('nav-steps__item_active');
     		});
     	});
+	});
+
+	window.addEventListener('scroll', function (evt) {
+		let fromTop = window.scrollY;
+
+		stepSections.forEach(function (link) {
+			let section = document.querySelector(link.hash);
+
+			if (
+				section.offsetTop <= fromTop &&
+				section.offsetTop + section.offsetHeight > fromTop
+			) {
+				link.classList.add('nav-steps__item_active');
+			} else {
+				link.classList.remove('nav-steps__item_active');
+			}
+		});
 	});
 }

@@ -18,6 +18,33 @@ block content
 									svg.account__icon
 										use(xlink:href='/img/svgSprite.svg#icon__account')
 									.account__username Account
+							.burger.burger__menu
+								input.burger__toggle(id='burger__toggle' type='checkbox')
+								label.burger__btn(for='burger__toggle')
+									span.burger__icon
+								.burger__box
+									.burger__row
+										.burger__account
+											a.account(href='#')
+												svg.account__icon
+													use(xlink:href='/img/svgSprite.svg#icon__account')
+												.account__username Account
+									nav.burger__nav
+										a.burger__item(href='#') Equipment
+										a.burger__item(href='#') About us
+										a.burger__item(href='#') Blog
+									.burger__socials
+										.burger-socials
+											.burger-socials__row
+												.burger-socials__title Follow us
+												a.burger-socials__link(href='htts://instagram.com')
+													svg.burger-socials__icon
+														use(xlink:href='img/svgSprite.svg#icon__inst')
+												a.burger-socials__link(href='htts://twitter.com')
+													svg.burger-socials__icon
+														use(xlink:href='img/svgSprite.svg#icon__tw')
+										svg.burger__logo
+												use(xlink:href='/img/svgSprite.svg#icon__logo')
 	.socials
 		.socials__col
 			.socials__title Follow us
@@ -29,15 +56,15 @@ block content
 					use(xlink:href='img/svgSprite.svg#icon__tw')
 	nav.nav-steps
 		a.nav-steps__item.nav-steps__item_active(href='#start') Start
-		a.nav-steps__item(href='#01') 01
-		a.nav-steps__item(href='#02') 02
-		a.nav-steps__item(href='#03') 03
-	section.hero
+		a.nav-steps__item(href='#step-1') 01
+		a.nav-steps__item(href='#step-2') 02
+		a.nav-steps__item(href='#step-3') 03
+	section.hero(id='start')
 		.hero__inner
 			.hero__content
 				.hero__subtitle A Hiking guide
 				h1.hero__heading Be prepared for the Mountains and beyond!
-				a.hero__link(href='#steps') scroll down
+				a.hero__link(href='#step-1') scroll down
 					svg.hero__arrow
 						use(xlink:href='img/svgSprite.svg#icon__arrow')
 		.hero__bg
@@ -45,35 +72,35 @@ block content
 			.hero__layer.hero__layer_front(data-type='parallax', data-depth=3)
 			.hero__layer.hero__layer_middle(data-type='parallax', data-depth=1.25)
 			.hero__layer.hero__layer_back
-	section.steps(id='steps')
+	section.steps(id='step-1')
 		.steps__inner
 			.grid
 				.grid__row
-					.grid__col.grid__col_xl-10.col-offset__xl-1
+					.grid__col.grid__col_md-10.col-offset__md-1
 						+steps-item(binary.step1)
-	section.steps.steps_even
+	section.steps.steps_even(id='step-2')
 		.steps__inner
 			.grid
 				.grid__row
-					.grid__col.grid__col_xl-10.col-offset__xl-1
+					.grid__col.grid__col_md-10.col-offset__md-1
 						+steps-item(binary.step2)
-	section.steps
+	section.steps(id='step-3')
 		.steps__inner
 			.grid
 				.grid__row
-					.grid__col.grid__col_xl-10.col-offset__xl-1
+					.grid__col.grid__col_md-10.col-offset__md-1
 						+steps-item(binary.step3)
 	footer.footer
 		.footer__inner
 			.grid
 				.grid__row
-					.grid__col.grid__col_xl-3.col-offset__xl-1
+					.grid__col.col-order__xs-2.grid__col_sm-4.grid__col_md-3.col-offset__md-1.grid__col_xl-3.col-offset__xl-1
 						.footer__info
 							svg.footer__logo.logo
 								use(xlink:href='/img/svgSprite.svg#icon__logo')
-							.footer__text Get out there & discover your next <br>slope, mountain & destination!
+							.footer__text Get out there & discover your next slope, mountain & destination!
 							.footer__copy Copyright 2019 MNTN, Inc. Terms & Privacy
-					.grid__col.grid__col_xl-4.col-offset__xl-3
+					.grid__col.grid__col_sm-6.col-order__sm-2.col-offset__sm-2.grid__col_md-5.col-offset__md-2.grid__col_xl-4.col-offset__xl-3
 						.footer-links
 							+footer-links('More on the Blog',
 								[

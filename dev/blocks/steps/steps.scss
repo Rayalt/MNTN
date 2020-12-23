@@ -4,34 +4,88 @@
 
 .steps {
 	counter-increment: step;
-	height: 100vh;
-	min-height: 920px;
+	@media (min-width: $screen-xl) {
+		height: 100vh;
+		min-height: 920px;
+	}
 	&__item {
 		align-items: center;
 		display: flex;
-		gap: 114px;
+		flex-direction: column-reverse;
+		@media (min-width: $screen-sm) {
+			flex-direction: row-reverse;
+			gap: 32px;
+			align-items: flex-end;
+		}
+		@media (min-width: $screen-md) {
+			margin: 0 auto;
+			gap: 56px;
+		}
+		@media (min-width: $screen-lg) {
+			align-items: center;
+			justify-content: center;
+		}
+		@media (min-width: $screen-xl) {
+			flex-direction: row;
+			gap: 114px;
+		}
 	}
 	&_even &__item {
-		flex-direction: row-reverse;
+		flex-direction: column-reverse;
+		@media (min-width: $screen-sm) {
+			flex-direction: row;
+		}
+		@media (min-width: $screen-xl) {
+			flex-direction: row-reverse;
+		}
 	}
+	
 	&__inner {
-		display: flex;
-		justify-content: center;
 		align-items: center;
-		padding: 152px 0 48px;
+		justify-content: center;
+		padding: 88px 0 16px;
+		@media (min-width: $screen-md) {
+			padding: 132px 0 68px;
+		}
+		@media (min-width: $screen-md) {
+			padding: 152px 0 48px;
+		}
 	}
 	&__img {
 		display: block;
-		height: auto;
-		max-width: 100%;
-		min-width: 566px;
+		width: 100vw;
+		@media (min-width: $screen-sm) {
+			width: 264px;
+			object-fit: cover;
+			height: 400px;
+		}
+		@media (min-width: $screen-md) {
+			width: 300px;
+		}
+		@media (min-width: $screen-xl) {
+			height: auto;
+			width: 566px;
+		}
 	}
 	&__col {
 		align-items: center;
 		display: flex;
-		height: 100%;
-		padding: 0 0 0 150px;
-		width: 782px;
+		flex-direction: column;
+		justify-content: center;
+		padding: 0;
+		@media (min-width: $screen-sm) {
+			//width: 536px;
+			flex-direction: row;
+			height: 100%;
+			justify-content: flex-start;
+		}
+		@media (min-width: $screen-md) {
+			//width: 100%;
+		}
+		@media (min-width: $screen-xl) {
+			padding: 0 0 0 150px;
+			width: 782px;
+		}
 	}
 	&__content {
 		display: grid;
@@ -39,8 +93,17 @@
 		&::before {
 			@include digit;
 			content: '0'counter(step);
+			font-size: 80px;
 			position: absolute;
-			transform: translate(-150px, -100px);
+			transform: translate(-4px, -33px);
+			@media (min-width: $screen-sm) {
+				font-size: 104px;
+				transform: translate(-6px, -40px);
+			}
+			@media (min-width: $screen-xl) {
+				transform: translate(-150px, -100px);	
+				font-size: 240px;
+			}
 		}
 	}
 	&__title {
@@ -53,11 +116,11 @@
 		@include descr;
 	}
 	&__link {
-		align-items: center;
 		@include readmore;
+		align-items: center;
+		color: var(--accent-color);
 		display: flex;
 		max-width: 135px;
-		color: var(--accent-color);
 		opacity: 1;
 		transition: opacity .125s ease;
 		&:hover {
@@ -68,11 +131,19 @@
 		}
 	}
 	&__arrow {
-		fill: var(--accent-color);
-		height: 16px;
-		width: 24px;
 		display: block;
+		fill: var(--accent-color);
+		height: 10px;
 		margin-left: 17px;
 		transition: transform .125s ease;
+		width: 15px;
+		@media (min-width: $screen-sm) {
+			height: 15px;
+			width: 21px;
+		}
+		@media (min-width: $screen-xl) {
+			height: 16px;
+			width: 24px;
+		}
 	}
 }

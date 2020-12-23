@@ -1,11 +1,11 @@
 $screen-xs: 0px !default;
-$screen-sm: 600px !default;
+$screen-sm: 768px !default;
 $screen-md: 960px !default;
 $screen-lg: 1280px !default;
-$screen-xl: 1680px !default;
+$screen-xl: 1800px !default;
 
 $container-xs: 100% !default;
-$container-sm: 592px !default;
+$container-sm: 704px !default;
 $container-md: 948px !default;
 $container-lg: 1248px !default;
 $container-xl: 1792px !default;
@@ -246,7 +246,7 @@ $grid-gutter-width: 32px !default;
     }
 }
 
-@mixin order (
+@mixin col-order (
     $screen: xs,
     $order: 1
 ) {

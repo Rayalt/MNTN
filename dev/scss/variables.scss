@@ -8,6 +8,7 @@
     
 	--color-white:					#ffffff;
 	--color-semi-white:				rgba(255, 255, 255, .5);
+	--color-semi-black:				rgba(0, 0, 0, 0.5);
     --accent-color:					#FBD784;
 
 	--body-bg:						#0B1D26;
@@ -18,5 +19,6 @@
 
 	--font-weight-base:				  var(--font-weight-normal);
 	--line-height-base:				  1;
+	--nav-padding: 					  calc((100vw - 904px) / 2);
 
 }

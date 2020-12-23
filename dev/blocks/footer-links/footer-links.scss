@@ -5,29 +5,43 @@
 .footer-links {
 	display: flex;
 	justify-content: space-between;
-	&__content {}
+	@media (min-width: $screen-xl) {
+		margin: 32px 0 0 0;
+	}
+	&__content {
+	}
 	&__list {
 		list-style: none;
 		margin: 0;
 		padding: 0;
 	}
 	&__link {
-		text-decoration: none;
 		color: var(--color-white);
-		font-weight: 400;
 		display: inline-block;
-		transition: opacity .25s ease;
+		font-size: 12px;
+		font-weight: 400;
 		letter-spacing: -0.75px;
 		line-height: 1.79;
+		text-decoration: none;
+		transition: opacity .25s ease;
+		@media (min-width: $screen-xl) {
+			font-size: 14px;
+		}
 		&:hover {
 			opacity: .5;
 		}
 	}
 	&__heading {
 		color: var(--accent-color);
-		font-size: 24px;
-		line-height: 1.34;
+		font-size: 14px;
 		font-weight: 500;
+		line-height: 1.34;
+		@media (min-width: 425px) {
+			font-size: 16px;
+		}
+		@media (min-width: $screen-xl) {
+			font-size: 24px;
+		}
 	}
 	&__item {
 		& + & {
