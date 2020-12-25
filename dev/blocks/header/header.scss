@@ -3,10 +3,16 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .header {
+	background: linear-gradient(to bottom, var(--body-bg) 0, rgba(#0b1d26, 0) 100%);
 	display: block;
+	height: 64px;
 	position: fixed;
 	width: 100%;
 	z-index: 99;
+	@media (min-width: $screen-md) {
+		background: none;
+		height: auto;
+	}
 	@media (min-width: $screen-xl) {
 		display: block;
 		position: fixed;
@@ -14,9 +20,12 @@
 		z-index: 99;
 	}
 	&__inner {
-		padding: 64px 0;
-		@media (max-width: $screen-sm) {
-			padding: 16px 0;
+		padding: 16px 0;
+		@media (min-width: $screen-sm) {
+			padding: 32px 0;
+		}
+		@media (min-width: $screen-md) {
+			padding: 64px 0;
 		}
 	}
 	&__row {
@@ -44,13 +53,17 @@
 		text-decoration: none;
 		transition: color .25s ease;
 		color: var(--color-typography-inverse);
+		margin-left: 40px;
 		&:hover {
 			color: var(--accent-color);
 		}
+	}
+	&__menu {
+		height: 40px;
+		width: 40px;
+		cursor: pointer;
 		@media (min-width: $screen-md) {
-			& + & {
-				margin-left: 40px;
-			}
+			display: none;
 		}
 	}
 }

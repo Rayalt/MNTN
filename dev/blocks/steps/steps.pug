@@ -11,5 +11,7 @@ mixin steps-item(vars)
 					a.steps__link(href='#') read more
 						svg.steps__arrow
 							use(xlink:href='img/svgSprite.svg#icon__arrow')
-			each item in vars.item ? vars.item : []
-				img.steps__img(src='/img/img__steps_' + item.num + '.jpg' srcset='/img/img__steps_' + item.num + '.jpg 566w, ' + '/img/img__steps-mob_' + item.num + '.jpg 375w' sizes='(min-width: 320px) 375px, (min-width: 1920px) 566px')
+			.steps__img
+				img(src='/img/img__steps_' + item.num + '.jpg',
+				srcset='/img/img__steps_' + item.num + '_m.jpg 992w, ' + '/img/img__steps_' + item.num + '.jpg'
+				)

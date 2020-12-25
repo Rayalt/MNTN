@@ -4,11 +4,8 @@
 
 .footer {
 	&__inner {
-		padding: 176px 0 80px 0;
-		@media (min-width: $screen-md) {
-			padding: 112px 0;
-		}
-		@media (min-width: $screen-xl) {
+		padding: 80px 0;
+		@media (min-width: $screen-sm) {
 			padding: 120px 0;
 		}
 	}
@@ -25,7 +22,6 @@
 		flex-direction: column;
 		height: 100%;
 		justify-content: space-between;
-
 	}
 	&__text {
 		flex: 1 1 auto;

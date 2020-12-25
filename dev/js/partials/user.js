@@ -18,27 +18,29 @@ window.onload = function() {
 			translate = 'translate3d(0, ' + movement + 'px, 0)';
 			layer.style.transform = translate;
 		}
-    });
-
-	let navItems = document.querySelectorAll('.nav-steps__item');
-	let stepSections = document.querySelectorAll('.steps');
-
-	let lastId;
-	let cur = [];
-	let fromTop = 1;
-
-	navItems.forEach(function(item) {
-    	item.addEventListener('click', function (evt) {
-    		navItems.forEach(function(item) {
-        		evt.target !== item ? item.classList.remove('nav-steps__item_active') : item.classList.add('nav-steps__item_active');
-    		});
-    	});
 	});
 
-	window.addEventListener('scroll', function (evt) {
+	let menuTrigger = document.querySelector('.header__menu'),
+		closeMenuButton = document.querySelector('.icon__close'),
+		darkerCurtain = document.querySelector('.page__darker'),
+		pageBody = document.querySelector('body');
+
+	menuTrigger.addEventListener('click', function() {
+		pageBody.classList.toggle('open-nav');
+	})
+	closeMenuButton.addEventListener('click', function() {
+		pageBody.classList.toggle('open-nav');
+	})
+	darkerCurtain.addEventListener('click', function() {
+		pageBody.classList.toggle('open-nav');
+	})
+
+	let mainNavLinks = document.querySelectorAll('.nav-steps__item');
+
+	window.addEventListener('scroll', event => {
 		let fromTop = window.scrollY;
 
-		stepSections.forEach(function (link) {
+		mainNavLinks.forEach(link => {
 			let section = document.querySelector(link.hash);
 
 			if (

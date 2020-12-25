@@ -1,17 +1,16 @@
-// В этом файле должны быть стили для БЭМ-блока burger-socials, его элементов,
+// В этом файле должны быть стили для БЭМ-блока side-nav-socials, его элементов,
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
-.burger-socials {
+.side-nav-socials {
 	&__row {
 		align-items: center;
 		display: flex;
 	}
 	&__title {
-
 	}
 	&__link {
-		margin: 0 0 0 10px;
+		margin: 0 0 0 16px;
 		transition: opacity .25s ease;
 		&:hover {
 			opacity: .5;
@@ -25,3 +24,4 @@
 		width: 18px;
 	}
 }
+

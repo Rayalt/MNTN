@@ -4,20 +4,22 @@
 
 .socials {
 	display: none;
+	position: fixed;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 99;
 	@media (min-width: $screen-md) {
-		//left: calc((100vw - 1200px) / 2);
 		display: block;
-		left: calc((100vw - 904px) / 2);
-		position: fixed;
-		top: 50%;
-		transform: translateY(-50%);
-		z-index: 99;
+		left: calc((100vw - 928px) / 2);
 	}
 	@media (min-width: $screen-lg) {
-		left: calc((100vw - 1184px) / 2);
+		left: calc((100vw - 1136px) / 2);
 	}
 	@media (min-width: $screen-xl) {
-		left: calc((100vw - 1760px) / 2);
+		left: calc((100vw - 1336px) / 2);
+	}
+	@media (min-width: $screen-xxl) {
+		left: calc((100vw - 1784px) / 2);
 	}
 	&__col {
 		align-items: center;
@@ -25,16 +27,9 @@
 		flex-direction: column;
 	}
 	&__title {
+		font-size: 21px;
+		user-select: none;
 		writing-mode: vertical-lr;
-		@media (min-width: $screen-md) {
-			font-size: 16px;
-		}
-		@media (min-width: $screen-lg) {
-			font-size: 18px;
-		}
-		@media (min-width: $screen-xl) {
-			font-size: 21px;
-		}
 	}
 	&__link {
 		margin: 24px 0 0 0;
@@ -48,15 +43,7 @@
 	}
 	&__icon {
 		fill: var(--color-white);
-		height: 14px;
-		width: 14px;
-		@media (min-width: $screen-lg) {
-			height: 20px;
-			width: 20px;
-		}
-		@media (min-width: $screen-xl) {
-			height: 24px;
-			width: 24px;
-		}
+		height: 24px;
+		width: 24px;
 	}
 }

@@ -194,6 +194,43 @@
         &_xl-12 {
             @include col(xl, 12, $grid-columns, 32px);
         }
+
+        &_xxl-1 {
+            @include col(xxl, 1, $grid-columns, 32px);
+        }
+        &_xxl-2 {
+            @include col(xxl, 2, $grid-columns, 32px);
+        }
+        &_xxl-3 {
+            @include col(xxl, 3, $grid-columns, 32px);
+        }
+        &_xxl-4 {
+            @include col(xxl, 4, $grid-columns, 32px);
+        }
+        &_xxl-5 {
+            @include col(xxl, 5, $grid-columns, 32px);
+        }
+        &_xxl-6 {
+            @include col(xxl, 6, $grid-columns, 32px);
+        }
+        &_xxl-7 {
+            @include col(xxl, 7, $grid-columns, 32px);
+        }
+        &_xxl-8 {
+            @include col(xxl, 8, $grid-columns, 32px);
+        }
+        &_xxl-9 {
+            @include col(xxl, 9, $grid-columns, 32px);
+        }
+        &_xxl-10 {
+            @include col(xxl, 10, $grid-columns, 32px);
+        }
+        &_xxl-11 {
+            @include col(xxl, 11, $grid-columns, 32px);
+        }
+        &_xxl-12 {
+            @include col(xxl, 12, $grid-columns, 32px);
+        }
     }
 }
 
@@ -381,6 +418,43 @@
     }
     &__xl-12 {
         @include col-offset(xl, 12, $grid-columns);
+    }
+
+    &__xxl-1 {
+        @include col-offset(xxl, 1, $grid-columns);
+    }
+    &__xxl-2 {
+        @include col-offset(xxl, 2, $grid-columns);
+    }
+    &__xxl-3 {
+        @include col-offset(xxl, 3, $grid-columns);
+    }
+    &__xxl-4 {
+        @include col-offset(xxl, 4, $grid-columns);
+    }
+    &__xxl-5 {
+        @include col-offset(xxl, 5, $grid-columns);
+    }
+    &__xxl-6 {
+        @include col-offset(xxl, 6, $grid-columns);
+    }
+    &__xxl-7 {
+        @include col-offset(xxl, 7, $grid-columns);
+    }
+    &__xxl-8 {
+        @include col-offset(xxl, 8, $grid-columns);
+    }
+    &__xxl-9 {
+        @include col-offset(xxl, 9, $grid-columns);
+    }
+    &__xxl-10 {
+        @include col-offset(xxl, 10, $grid-columns);
+    }
+    &__xxl-11 {
+        @include col-offset(xxl, 11, $grid-columns);
+    }
+    &__xxl-12 {
+        @include col-offset(xxl, 12, $grid-columns);
     }
 }
 

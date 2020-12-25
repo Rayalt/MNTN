@@ -39,6 +39,9 @@ body {
 	font-weight: var(--font-weight-base);
 	line-height: var(--line-height-base);
 	margin: 0;
+	&.open-nav {
+		overflow: hidden;
+	}
 }
 
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {

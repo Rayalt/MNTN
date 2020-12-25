@@ -1,6 +1,7 @@
 extends ../pug/layout_default.pug
 
 block content
+
 	header.header
 		.header__inner
 			.grid
@@ -18,33 +19,33 @@ block content
 									svg.account__icon
 										use(xlink:href='/img/svgSprite.svg#icon__account')
 									.account__username Account
-							.burger.burger__menu
-								input.burger__toggle(id='burger__toggle' type='checkbox')
-								label.burger__btn(for='burger__toggle')
-									span.burger__icon
-								.burger__box
-									.burger__row
-										.burger__account
-											a.account(href='#')
-												svg.account__icon
-													use(xlink:href='/img/svgSprite.svg#icon__account')
-												.account__username Account
-									nav.burger__nav
-										a.burger__item(href='#') Equipment
-										a.burger__item(href='#') About us
-										a.burger__item(href='#') Blog
-									.burger__socials
-										.burger-socials
-											.burger-socials__row
-												.burger-socials__title Follow us
-												a.burger-socials__link(href='htts://instagram.com')
-													svg.burger-socials__icon
-														use(xlink:href='img/svgSprite.svg#icon__inst')
-												a.burger-socials__link(href='htts://twitter.com')
-													svg.burger-socials__icon
-														use(xlink:href='img/svgSprite.svg#icon__tw')
-										svg.burger__logo
-												use(xlink:href='/img/svgSprite.svg#icon__logo')
+							.header__menu
+								svg.icon.icon__menu
+									use(xlink:href='/img/svgSprite.svg#icon__menu')
+
+	.side-nav
+		.side-nav__inner
+			.side-nav__row
+				a.account(href='#')
+					svg.account__icon
+						use(xlink:href='/img/svgSprite.svg#icon__account')
+					.account__username Account
+				svg.icon.icon__close
+					use(xlink:href='/img/svgSprite.svg#icon__close')
+			nav.side-nav__nav
+				a.side-nav__item(href='#') Equipment
+				a.side-nav__item(href='#') About us
+				a.side-nav__item(href='#') Blog
+			.side-nav__socials
+				.side-nav-socials.side-nav-socials__row
+					.side-nav-socials__title Follow us
+					a.side-nav-socials__link(href='htts://instagram.com')
+						svg.side-nav-socials__icon
+							use(xlink:href='img/svgSprite.svg#icon__inst')
+					a.side-nav-socials__link(href='htts://twitter.com')
+						svg.side-nav-socials__icon
+							use(xlink:href='img/svgSprite.svg#icon__tw')
+
 	.socials
 		.socials__col
 			.socials__title Follow us
@@ -54,11 +55,13 @@ block content
 			a.socials__link(href='htts://twitter.com')
 				svg.socials__icon
 					use(xlink:href='img/svgSprite.svg#icon__tw')
+
 	nav.nav-steps
 		a.nav-steps__item.nav-steps__item_active(href='#start') Start
 		a.nav-steps__item(href='#step-1') 01
 		a.nav-steps__item(href='#step-2') 02
 		a.nav-steps__item(href='#step-3') 03
+
 	section.hero(id='start')
 		.hero__inner
 			.hero__content
@@ -68,10 +71,12 @@ block content
 					svg.hero__arrow
 						use(xlink:href='img/svgSprite.svg#icon__arrow')
 		.hero__bg
-			.hero__layer.hero__layer_darker(data-type='parallax', data-depth=2.5)
-			.hero__layer.hero__layer_front(data-type='parallax', data-depth=3)
-			.hero__layer.hero__layer_middle(data-type='parallax', data-depth=1.25)
+			.hero__darker
+			.hero__layer.hero__layer_darker(data-type='parallax', data-depth=1.75)
+			.hero__layer.hero__layer_front(data-type='parallax', data-depth=1.5)
+			.hero__layer.hero__layer_middle(data-type='parallax', data-depth=1)
 			.hero__layer.hero__layer_back
+
 	section.steps(id='step-1')
 		.steps__inner
 			.grid
@@ -90,17 +95,18 @@ block content
 				.grid__row
 					.grid__col.grid__col_md-10.col-offset__md-1
 						+steps-item(binary.step3)
+
 	footer.footer
 		.footer__inner
 			.grid
 				.grid__row
-					.grid__col.col-order__xs-2.grid__col_sm-4.grid__col_md-3.col-offset__md-1.grid__col_xl-3.col-offset__xl-1
+					.grid__col.col-order__xs-2.grid__col_sm-4.grid__col_md-3.col-offset__md-1.col-offset__lg-1.grid__col_xl-3.col-offset__xl-1
 						.footer__info
 							svg.footer__logo.logo
 								use(xlink:href='/img/svgSprite.svg#icon__logo')
 							.footer__text Get out there & discover your next slope, mountain & destination!
 							.footer__copy Copyright 2019 MNTN, Inc. Terms & Privacy
-					.grid__col.grid__col_sm-6.col-order__sm-2.col-offset__sm-2.grid__col_md-5.col-offset__md-2.grid__col_xl-4.col-offset__xl-3
+					.grid__col.grid__col_sm-6.col-order__sm-2.col-offset__sm-2.grid__col_md-5.col-offset__md-2.grid__col_lg-4.col-offset__lg-2.grid__col_xl-4.col-offset__xl-3
 						.footer-links
 							+footer-links('More on the Blog',
 								[
@@ -118,3 +124,4 @@ block content
 									{link: 'Press', href: '#'}
 								]
 							)
+	.page__darker

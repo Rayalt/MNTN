@@ -4,67 +4,51 @@
 
 .steps {
 	counter-increment: step;
-	@media (min-width: $screen-xl) {
+	@media (min-width: $screen-sm) {
+		min-height: 100vh;
+	}
+	@media (min-width: $screen-md) {
 		height: 100vh;
-		min-height: 920px;
+	}
+	@media (min-width: $screen-lg) {
+		height: 100vh;
+	}
+	&_even &__item {
+		@media (min-width: $screen-md) {
+			flex-direction: row-reverse;
+		}	
+	}
+	&__inner {
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		padding: 64px 0;
+		@media (min-width: $screen-sm) {
+			padding: 80px 0;
+		}
+		@media (min-width: $screen-md) {
+			padding: 96px 0;
+		}
+		@media (min-width: $screen-lg) {
+			padding: 160px 0;
+		}
 	}
 	&__item {
 		align-items: center;
 		display: flex;
 		flex-direction: column-reverse;
-		@media (min-width: $screen-sm) {
-			flex-direction: row-reverse;
-			gap: 32px;
-			align-items: flex-end;
-		}
 		@media (min-width: $screen-md) {
-			margin: 0 auto;
-			gap: 56px;
+			align-items: center;
+			flex-direction: row;
+			height: calc(100vh - 192px);
 		}
 		@media (min-width: $screen-lg) {
 			align-items: center;
 			justify-content: center;
+			height: calc(100vh - 320px);
 		}
-		@media (min-width: $screen-xl) {
+		@media (min-width: $screen-xxl) {
 			flex-direction: row;
-			gap: 114px;
-		}
-	}
-	&_even &__item {
-		flex-direction: column-reverse;
-		@media (min-width: $screen-sm) {
-			flex-direction: row;
-		}
-		@media (min-width: $screen-xl) {
-			flex-direction: row-reverse;
-		}
-	}
-	
-	&__inner {
-		align-items: center;
-		justify-content: center;
-		padding: 88px 0 16px;
-		@media (min-width: $screen-md) {
-			padding: 132px 0 68px;
-		}
-		@media (min-width: $screen-md) {
-			padding: 152px 0 48px;
-		}
-	}
-	&__img {
-		display: block;
-		width: 100vw;
-		@media (min-width: $screen-sm) {
-			width: 264px;
-			object-fit: cover;
-			height: 400px;
-		}
-		@media (min-width: $screen-md) {
-			width: 300px;
-		}
-		@media (min-width: $screen-xl) {
-			height: auto;
-			width: 566px;
 		}
 	}
 	&__col {
@@ -72,19 +56,75 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		margin-top: -80px;
 		padding: 0;
+		position: relative;
+		z-index: 2;
 		@media (min-width: $screen-sm) {
-			//width: 536px;
 			flex-direction: row;
 			height: 100%;
 			justify-content: flex-start;
+			margin: 0;
 		}
-		@media (min-width: $screen-md) {
-			//width: 100%;
-		}
-		@media (min-width: $screen-xl) {
+		@media (min-width: $screen-xxl) {
 			padding: 0 0 0 150px;
 			width: 782px;
+		}
+	}
+	&__img {
+		align-items: flex-end;
+		display: flex;
+		flex: 0 0 auto;
+		flex-direction: row;
+		justify-content: center;
+		position: relative;
+		width: auto;
+		z-index: 1;
+		@media (min-width: $screen-sm) {
+			align-items: center;
+			height: 560px;
+			overflow: hidden;
+		}
+		@media (min-width: $screen-md) {
+			height: auto;
+			margin: 0 0 0 56px;
+			width: 368px;
+		}
+		@media (min-width: $screen-lg) {
+			width: 352px;
+		}
+		@media (min-width: $screen-xl) {
+			width: 416px;
+		}
+		@media (min-width: $screen-xxl) {
+			margin: 0 0 0 114px;
+			width: 566px;
+		}
+		&::after {
+			height: 200px;
+			bottom: 0;
+			content: '';
+			position: absolute;
+			left: 0;
+			width: 100%;
+			z-index: 2;
+			background: linear-gradient(180deg, rgba(#0b1d26, 0) 0%, var(--body-bg) 100%);
+			@media (min-width: $screen-md) {
+				content: none;
+			}
+		}
+		img {
+			display: block;
+			height: auto;
+			width: 100vw;
+			@media (min-width: $screen-md) {
+				width: 100%;
+			}
+		}
+	}
+	&_even &__item &__img {
+		@media (min-width: $screen-md) {
+			margin: 0 56px 0 0;
 		}
 	}
 	&__content {
@@ -93,24 +133,14 @@
 		&::before {
 			@include digit;
 			content: '0'counter(step);
-			font-size: 80px;
 			position: absolute;
-			transform: translate(-4px, -33px);
-			@media (min-width: $screen-sm) {
-				font-size: 104px;
-				transform: translate(-6px, -40px);
-			}
-			@media (min-width: $screen-xl) {
-				transform: translate(-150px, -100px);	
-				font-size: 240px;
-			}
 		}
-	}
-	&__title {
-		@include title;
 	}
 	&__subtitle {
 		@include subtitle;
+	}
+	&__title {
+		@include title;
 	}
 	&__descr {
 		@include descr;
@@ -134,14 +164,14 @@
 		display: block;
 		fill: var(--accent-color);
 		height: 10px;
-		margin-left: 17px;
+		margin: 0 0 0 16px;
 		transition: transform .125s ease;
 		width: 15px;
 		@media (min-width: $screen-sm) {
 			height: 15px;
 			width: 21px;
 		}
-		@media (min-width: $screen-xl) {
+		@media (min-width: $screen-xxl) {
 			height: 16px;
 			width: 24px;
 		}
