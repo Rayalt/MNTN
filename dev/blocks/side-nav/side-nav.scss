@@ -35,6 +35,11 @@
 		display: flex;
 		justify-content: space-between;
 	}
+	&__close {
+		padding: 4px;
+		height: 32px;
+		width: 32px;
+	}
 	&__menu {
 		@media (min-width: $screen-sm) {
 			margin: 16px 0;

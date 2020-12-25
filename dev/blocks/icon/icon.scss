@@ -3,13 +3,7 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .icon {
-	fill: var(--color-white);
-	&__menu {
-		height: 40px;
-		width: 40px;
-	}
-	&__close {
-		width: 48px;
-		height: 40px;
-	}
+	fill: var(--color-white);	
+	height: 100%;
+	width: 100%;
 }

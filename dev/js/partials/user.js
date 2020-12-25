@@ -21,7 +21,7 @@ window.onload = function() {
 	});
 
 	let menuTrigger = document.querySelector('.header__menu'),
-		closeMenuButton = document.querySelector('.icon__close'),
+		closeMenuButton = document.querySelector('.side-nav__close'),
 		darkerCurtain = document.querySelector('.page__darker'),
 		pageBody = document.querySelector('body');
 
