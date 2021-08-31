@@ -9,7 +9,8 @@
   },
   "scripts": {
     "start": "gulp",
-    "build": "gulp build"
+    "build": "gulp build",
+    "deploy": "gulp deploy"
   },
   "browserslist": [
     "> 1%",
@@ -50,5 +51,8 @@
     "through2": "^4.0.2",
     "webpack": "^5.7.0",
     "webpack-stream": "^6.1.1"
+  },
+  "dependencies": {
+    "parallax-js": "^3.1.0"
   }
 }
